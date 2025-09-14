@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-community
+langgraph
+openai
+qdrant-client
+sentence-transformers
+huggingface-hub
+tavily-python
+dspy-ai
+pandas
+pyarrow
+python-dotenv
+requests
