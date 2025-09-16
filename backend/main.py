@@ -28,7 +28,7 @@ app = FastAPI(title="Math Agent API (Agentic-RAG)")
 # Add CORS middleware
 allowed_origins = os.getenv(
     "ALLOWED_ORIGINS",
-    "http://localhost:3000,http://localhost:5173,https://math-ai-agent-six.vercel.app,https://mathaiagent.onrender.com"
+    "http://localhost:3000,http://localhost:5173,https://math-ai-agent-six.vercel.app,https://mathaiagent.onrender.com,https://math-ai-agent-nfxjuh1o2-ayamatr1xs-projects.vercel.app"
 ).split(",")
 
 allowed_origins = [origin.strip() for origin in allowed_origins]
