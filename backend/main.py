@@ -7,6 +7,8 @@ from qdrant_utils import search_qdrant, openai_client
 from search_utils import search_and_generate_answer
 import time
 import sqlite3
+import os
+from fastapi.middleware.cors import CORSMiddleware
 
 # Import DSPy integration
 try:
@@ -24,9 +26,16 @@ except ImportError as e:
 app = FastAPI(title="Math Agent API (Agentic-RAG)")
 
 # Add CORS middleware
+allowed_origins = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:3000,http://localhost:5173,https://math-ai-agent-six.vercel.app,https://mathaiagent.onrender.com"
+).split(",")
+
+allowed_origins = [origin.strip() for origin in allowed_origins]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -442,3 +451,5 @@ if __name__ == "__main__":
     else:
         print("📚 Running in standard mode - DSPy not available")
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
