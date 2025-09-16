@@ -6,8 +6,8 @@ from openai import OpenAI
 # Config
 # ----------------------------
 QDRANT_URL = "https://860eed44-48cf-41aa-88d7-075924f34685.us-east4-0.gcp.cloud.qdrant.io"
-QDRANT_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.IRQaj-_1chJ7lg1XmOVAwbbaPOjRp8GuMZ5z7noXqec"
-OPENAI_API = "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"
+QDRANT_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.HEumD0kLRmOj2Yg83auuuwtC4nZVJRAlt9GFB72_aU8"
+OPENAI_API = "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"
 
 # Initialize clients
 qdrant_client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_KEY, timeout=120.0)
